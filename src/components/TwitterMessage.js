@@ -4,7 +4,9 @@ class TwitterMessage extends React.Component {
   constructor() {
     super();
 
-    this.state = {};
+    this.state = {
+      twitter: ''
+    };
   }
 
   handleChange(event) {
