@@ -11,6 +11,7 @@ class PoemWriter extends React.Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.wordCount = this.wordCount.bind(this);
+    this.validFormat = this.validFormat.bind(this);
   }
 
   handleInputChange(event) {
@@ -21,23 +22,25 @@ class PoemWriter extends React.Component {
       [name]: value
     });
     if (target.name === 'poemText') {
-      var lines = value.split(/\r*\n/);
-      var count = lines.length;
-      console.log(count);
-      if (
-        count === 3 &&
-        this.wordCount(lines[0]) === 5 &&
-        this.wordCount(lines[1]) === 3 &&
-        this.wordCount(lines[2]) === 5
-      ) {
-        this.setState({
-          poemValid: true
-        });
-      } else {
-        this.setState({
-          poemValid: false
-        });
+      this.setState: {
+        poemValid: validFormat(value);
       }
+    }
+  }
+
+  validFormat(value) {
+    var lines = value.split(/\r*\n/);
+    var count = lines.length;
+    console.log(count);
+    if (
+      count === 3 &&
+      this.wordCount(lines[0]) === 5 &&
+      this.wordCount(lines[1]) === 3 &&
+      this.wordCount(lines[2]) === 5
+    ) {
+      return true;
+    } else {
+      return false;
     }
   }
 
