@@ -22,7 +22,7 @@ class PoemWriter extends React.Component {
       [name]: value
     });
     if (target.name === 'poemText') {
-      this.setState: {
+      this.setState {
         poemValid: validFormat(value);
       }
     }
