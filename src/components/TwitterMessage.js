@@ -1,11 +1,12 @@
 import React from 'react';
 
 class TwitterMessage extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      tweet: ''
+      tweet: '',
+      remainingChars: props.maxChars
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -24,6 +25,9 @@ class TwitterMessage extends React.Component {
           value={this.state.tweet}
           onChange={this.handleChange}
         />
+        <h4>
+          {this.state.remainingChars}
+        </h4>
       </div>
     );
   }
