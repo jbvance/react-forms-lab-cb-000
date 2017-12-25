@@ -33,7 +33,6 @@ class PoemWriter extends React.Component {
   }
 
   wordCount = line => {
-    debug;
     const words = line.split(' ');
     let count = 0;
     for (let i = 0; i < words.count; i++) {
