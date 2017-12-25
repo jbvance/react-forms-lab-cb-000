@@ -4,7 +4,10 @@ class PoemWriter extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      poemText: '',
+      poemValid: true
+    };
 
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -28,9 +31,11 @@ class PoemWriter extends React.Component {
           value={this.state.poemText}
           onChange={this.handleInputChange}
         />
-        <div id="poem-validation-error" style={{ color: 'red' }}>
-          This poem is not written in the right structure!
-        </div>
+        {this.state.poemValid
+          ? <div id="poem-validation-error" style={{ color: 'red' }}>
+              This poem is not written in the right structure!
+            </div>
+          : ''}
       </div>
     );
   }
