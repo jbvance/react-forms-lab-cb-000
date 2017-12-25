@@ -39,8 +39,8 @@ class PoemWriter extends React.Component {
       if (words[i].trim() !== '') {
         count++;
       }
-      return count;
     }
+    return count;
   }
 
   render() {
