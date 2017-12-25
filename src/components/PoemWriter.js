@@ -24,7 +24,11 @@ class PoemWriter extends React.Component {
       var lines = value.split(/\r*\n/);
       var count = lines.length;
       console.log(count);
-      this.state.poemValid = count === 3 && this.wordCount(lines[1] === 5);
+      if (count === 3 && this.wordCount(lines[1] === 5)) {
+        this.setState({
+          poemValid: true
+        });
+      }
     }
   }
 
