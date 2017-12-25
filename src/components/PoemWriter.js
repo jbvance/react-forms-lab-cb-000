@@ -6,7 +6,7 @@ class PoemWriter extends React.Component {
 
     this.state = {
       poemText: '',
-      poemValid: true
+      poemValid: false
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
