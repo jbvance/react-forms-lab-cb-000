@@ -10,6 +10,7 @@ class PoemWriter extends React.Component {
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.wordCount = this.wordCount.bind(this);
   }
 
   handleInputChange(event) {
