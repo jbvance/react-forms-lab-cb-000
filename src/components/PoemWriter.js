@@ -20,9 +20,10 @@ class PoemWriter extends React.Component {
       [name]: value
     });
     if (target.type === 'textarea') {
-      var lines = value.split(/\r*\n/)
+      var lines = value.split(/\r*\n/);
       var count = lines.length;
       console.log(count);
+      this.state.poemValid = count === 3;
     }
   }
 
